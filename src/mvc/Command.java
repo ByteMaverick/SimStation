@@ -10,6 +10,6 @@ public abstract class Command {
     public Command(Model model) {
         this.model = model;
     }
-
+//Test
     public abstract void execute() throws Exception;
 }
