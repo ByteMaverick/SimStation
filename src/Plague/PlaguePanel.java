@@ -12,14 +12,14 @@ import stoplight.StoplightPanel;
 
 import javax.swing.*;
 import java.awt.*;
-
+// Currently Working on it
 public class PlaguePanel extends WorldPanel {
     public PlaguePanel(WorldFactory factory) {
         super(factory);
 
 
 
-        // ===== Initial % Infected Slider =====
+
         JLabel initialInfectedLabel = new JLabel("Initial % Infected:");
 
         JSlider initialInfectedSlider = new JSlider(SwingConstants.HORIZONTAL, 0, 100, 10);

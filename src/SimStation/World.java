@@ -44,7 +44,7 @@ public abstract  class World extends Model {
     }
 
     public  String getStatus(){
-        String status = "Time: " + clock + "|" + "Agents:" + agents.size() + "| Alive: " + alive;
+        String status = "Clock: " + clock + "\n" + "Agents:" + agents.size();
         return  status;
     }
 

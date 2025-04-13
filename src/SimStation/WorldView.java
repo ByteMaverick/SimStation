@@ -19,10 +19,10 @@ public class WorldView extends View {
     public void paintComponent(Graphics gc) {
         super.paintComponent(gc);
 
-        // Cast the model to World to access agents
+
         World world = (World) model;
 
-        // Loop over each agent and draw them
+
         for (Agent a : world.getAgents()) {
             drawAgent(a, gc);
         }
@@ -30,7 +30,7 @@ public class WorldView extends View {
 
     }
 
-    // Default drawing method (can be overridden in future)
+    // Default drawing method
     protected void drawAgent(Agent a, Graphics gc) {
         int size = 10;
         int x = a.getXc();

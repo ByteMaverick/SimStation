@@ -24,7 +24,8 @@ public class Host extends MobileAgent {
 
     @Override
     public void update() {
-        // Move around randomly
+
+        // move around randomly
         Heading randomHeading = Heading.random();
         turn(randomHeading);
         move(1);
@@ -45,6 +46,5 @@ public class Host extends MobileAgent {
             }
         }
 
-        // Optional sleep to slow down simulation speed (not needed if Agent already sleeps)
     }
 }

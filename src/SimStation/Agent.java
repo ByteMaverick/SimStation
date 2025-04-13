@@ -55,7 +55,7 @@ public  abstract  class Agent implements Runnable, Serializable {
             while (!stopped) {
                 synchronized (this) {
                     while (paused) {
-                        wait(); // Efficient waiting
+                        wait();
                     }
                 }
 

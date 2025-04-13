@@ -70,7 +70,7 @@ public class WorldPanel extends AppPanel {
         //controlPanel.add(threadPanel, BorderLayout.NORTH);
         controlPanel.add(p,  BorderLayout.NORTH);
         //makeControlPanel();
-        //this.setPreferredSize(this.getPreferredSize());
+        this.setPreferredSize(this.getPreferredSize());
         //frame.setSize(frame.getPreferredSize());
     }
 

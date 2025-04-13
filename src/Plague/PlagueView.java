@@ -12,6 +12,7 @@ import java.awt.*;
 public class PlagueView extends WorldView {
     public PlagueView(Model model) {
         super(model);
+        setBackground(Color.DARK_GRAY);
     }
 
     @Override
@@ -28,7 +29,7 @@ public class PlagueView extends WorldView {
                 gc.setColor(Color.GREEN);
             }
         } else {
-            gc.setColor(Color.BLACK); // fallback for non-Host agents
+            gc.setColor(Color.BLACK);
         }
 
         gc.fillOval(x, y, size, size);

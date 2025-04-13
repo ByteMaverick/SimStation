@@ -21,7 +21,7 @@ public class PlagueStation extends World {
                 h.setInfected(true);
             }
 
-            // Set random location
+            // set randm location
             h.setXc(Utilities.rng.nextInt(World.SIZE));
             h.setYc(Utilities.rng.nextInt(World.SIZE));
 
@@ -32,14 +32,13 @@ public class PlagueStation extends World {
         addAgent(new ObserverAgent());
     }
 
-    // Optional: override status to show infection info
     @Override
     public String getStatus() {
         long infectedCount = agents.stream()
                 .filter(a -> a instanceof Host && ((Host) a).isInfected())
                 .count();
 
-        return super.getStatus() + " | Infected: " + infectedCount;
+        return super.getStatus() + " \n Infected(%): " + infectedCount;
     }
 
 

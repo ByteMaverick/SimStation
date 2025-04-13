@@ -1,7 +1,7 @@
 package SimStation;
 /*
 Edits:
-Mohammed Ansari: 4/11 created file
+Mohammed Ansari: 4/11 created file, copied from assigment description.
  */
 import mvc.Utilities;
 
