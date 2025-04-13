@@ -29,7 +29,7 @@ public abstract class Model extends Publisher implements Serializable {
         return fileName;
     }
 
-    public void changed() {
+    public static void changed() {
         unsavedChanges = true;
         this.notifySubscribers();
     }

@@ -65,6 +65,27 @@ public  abstract  class Agent implements Runnable, Serializable {
         onExit();
     }
 
+    public void setXc(int xc) {
+        if(xc >=0){
+            this.xc = xc;
+        }
+    }
+
+    public void setYc(int yc) {
+        if(xc <=World.SIZE){
+            this.yc = yc;
+        }
+
+    }
+
+    public int getXc() {
+        return xc;
+    }
+
+    public int getYc() {
+        return yc;
+    }
+
     // Lifecycle hooks
     protected void onStart() {}
     protected void onInterrupted() {}
