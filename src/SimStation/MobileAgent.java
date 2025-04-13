@@ -29,7 +29,7 @@ public class MobileAgent extends Agent {
         xc = (xc + World.SIZE) % World.SIZE;
         yc = (yc + World.SIZE) % World.SIZE;
 
-        World.changed(); // Notify the view
+        World.changed();
     }
 
     public void turn(Heading dir){
