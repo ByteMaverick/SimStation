@@ -1,5 +1,8 @@
 package SimStation;
-
+/*
+Edits:
+Mohammed Ansari: 4/11 created file
+ */
 import java.io.Serializable;
 
 public  abstract  class Agent implements Runnable, Serializable {
@@ -10,6 +13,7 @@ public  abstract  class Agent implements Runnable, Serializable {
     boolean stopped;
     String agentName;
     Thread myThread;
+    protected World world;
 
     public Agent(String name) {
         this.agentName = name;
@@ -72,7 +76,7 @@ public  abstract  class Agent implements Runnable, Serializable {
     }
 
     public void setYc(int yc) {
-        if(xc <=World.SIZE){
+        if(yc <=World.SIZE){
             this.yc = yc;
         }
 

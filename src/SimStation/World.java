@@ -1,20 +1,24 @@
 package SimStation;
-
+/*
+Edits:
+Mohammed Ansari: 4/11 created file
+ */
 import mvc.*;
 
 import java.util.*;
 
 public abstract  class World extends Model {
-    static int SIZE = 500;
+    protected static final int SIZE = 500;
     int clock = 0;
     int alive = 0;
-    ArrayList <Agent> agents = new ArrayList<>();
+    protected ArrayList <Agent> agents = new ArrayList<>();
 
     public  void addAgent(Agent a){
+        a.world = this;
         agents.add(a);
     }
     public  void startAgents(){
-
+        populate();
         for (Agent agent: agents){
             agent.start();
         }
@@ -45,8 +49,8 @@ public abstract  class World extends Model {
     }
 
     public void updateStatistics(){
-        alive  = agents.size();
-        clock += 1;
+        alive = agents.size();
+        clock++;
         changed();
     }
 
@@ -78,8 +82,11 @@ public abstract  class World extends Model {
     public abstract void populate();
 
 
+    public ArrayList<Agent> getAgents() {
+        return  agents;
+    }
 
-
-
-
+    public Iterator<Agent> iterator() {
+        return agents.iterator();
+    }
 }

@@ -1,5 +1,8 @@
 package SimStation;
-
+/*
+Edits:
+Mohammed Ansari: 4/11 created file
+ */
 import mvc.*;
 
 
@@ -16,8 +19,7 @@ public class WorldPanel extends AppPanel {
     public WorldPanel(WorldFactory factory) {
 
         super(factory);
-
-
+        controlPanel.setBackground(Color.pink);
 
         threadPanel.setLayout(new GridLayout(1, 5));
         threadPanel.setOpaque(false);

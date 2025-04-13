@@ -1,8 +1,11 @@
 package SimStation;
-
+/*
+Edits:
+Mohammed Ansari: 4/11 created file
+ */
 public class MobileAgent extends Agent {
 
-    Heading heading;
+    protected Heading heading;
 
     public MobileAgent(String name) {
         super(name);
@@ -23,13 +26,16 @@ public class MobileAgent extends Agent {
             case WEST:
                 xc -= steps;
                 break;
+
         }
+
+
 
         // Wraparound logic
         xc = (xc + World.SIZE) % World.SIZE;
         yc = (yc + World.SIZE) % World.SIZE;
 
-        World.changed();
+        world.changed();
     }
 
     public void turn(Heading dir){
