@@ -22,6 +22,6 @@ public class PrisonerDilemmaFactory extends WorldFactory {
 
     @Override
     public String about() {
-        return "Simülasyonda mahkumlar farklı stratejiler kullanarak oyun oynar.";
+        return "SimStation Prisoners Dilemma Tournament";
     }
 }
