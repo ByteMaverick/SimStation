@@ -34,6 +34,7 @@ class RandomWalkFactory extends WorldFactory {
 
 public class RandomWalkSimulation extends World {
 
+    @Override
     public void populate() {
         for(int i = 0; i < 50; i++)
             addAgent(new Drunk());

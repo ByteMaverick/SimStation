@@ -2,13 +2,15 @@ package Plague;
 /*
 Edits:
 Mohammed Ansari: 4/11 created file
- */
+Updated: 4/16 - added infection spread, movement, and fatality/recovery logic
+*/
 import SimStation.*;
 import mvc.Utilities;
 
 public class Host extends MobileAgent {
 
     private boolean infected = false;
+    private int timeInfected = -1;
 
     public Host(String name) {
         super(name);
@@ -22,29 +24,44 @@ public class Host extends MobileAgent {
         infected = status;
     }
 
+    public void setTimeInfected(int time) {
+        timeInfected = time;
+    }
+
+    public void infect() {
+        if (!infected) {
+            int chance = Utilities.rng.nextInt(100);
+            if (chance < PlagueStation.VIRULENCE) {
+                infected = true;
+                timeInfected = world.getClock();
+            }
+        }
+    }
+
     @Override
     public void update() {
-
-        // move around randomly
-        Heading randomHeading = Heading.random();
-        turn(randomHeading);
-        move(1);
-
-        // Try to infect a neighbor if currently infected
+        //  Try to infect a neighbor
         if (infected) {
-            Agent neighbor = world.getNeighbor(this, 10); // search radius = 10
+            Agent neighbor = world.getNeighbor(this, 10);
+            if (neighbor instanceof Host) {
+                ((Host) neighbor).infect();
+            }
 
-            if (neighbor != null && neighbor instanceof Host) {
-                Host other = (Host) neighbor;
-
-                if (!other.infected) {
-                    int chance = Utilities.rng.nextInt(100);
-                    if (chance < PlagueStation.VIRULENCE - PlagueStation.RESISTANCE) {
-                        other.setInfected(true);
-                    }
+            // Check infection duration
+            int duration = world.getClock() - timeInfected;
+            if (duration >= PlagueStation.INFECTION_LENGTH) {
+                if (PlagueStation.fatal) {
+                    stop(); // Host dies
+                    return;
+                } else {
+                    infected = false;
+                    timeInfected = -1;
                 }
             }
         }
 
+
+        turn(Heading.random());
+        move(1);
     }
 }

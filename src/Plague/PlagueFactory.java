@@ -3,7 +3,8 @@ package Plague;
 Edits:
 Mohammed Ansari: 4/11 created file
  */
-import SimStation.WorldFactory;
+import SimStation.*;
+import mvc.Command;
 import mvc.Model;
 import mvc.View;
 
@@ -28,6 +29,11 @@ public class PlagueFactory extends WorldFactory {
         return "";
     }
 
+
 }
+
+
+
+
 
 

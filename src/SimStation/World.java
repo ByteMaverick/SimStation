@@ -9,7 +9,7 @@ import java.util.*;
 
 public abstract  class World extends Model {
     protected static final int SIZE = 500;
-    int clock = 0;
+    public static int clock = 0;
     int alive = 0;
     protected ArrayList <Agent> agents = new ArrayList<>();
 
@@ -88,5 +88,9 @@ public abstract  class World extends Model {
 
     public Iterator<Agent> iterator() {
         return agents.iterator();
+    }
+
+    public int getClock() {
+        return  clock;
     }
 }

@@ -14,7 +14,6 @@ public class WorldView extends View {
         setBackground(Color.blue);
     }
 
-
     @Override
     public void paintComponent(Graphics gc) {
         super.paintComponent(gc);
@@ -26,9 +25,11 @@ public class WorldView extends View {
         for (Agent a : world.getAgents()) {
             drawAgent(a, gc);
         }
-        System.out.println("Agent count: " + world.getAgents().size());
+        //System.out.println("Agent count: " + world.getAgents().size());
+
 
     }
+
 
     // Default drawing method
     protected void drawAgent(Agent a, Graphics gc) {

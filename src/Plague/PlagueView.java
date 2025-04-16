@@ -23,6 +23,8 @@ public class PlagueView extends WorldView {
 
         if (a instanceof Host) {
             Host h = (Host) a;
+            System.out.println(h + ": " + (h.isInfected() ? "RED" : "GREEN"));
+
             if (h.isInfected()) {
                 gc.setColor(Color.RED);
             } else {

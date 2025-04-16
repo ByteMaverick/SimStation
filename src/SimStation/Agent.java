@@ -12,7 +12,7 @@ public  abstract  class Agent implements Runnable, Serializable {
     boolean paused;
     boolean stopped;
     String agentName;
-    Thread myThread;
+    transient Thread myThread;
     protected World world;
 
     public Agent(String name) {
@@ -59,7 +59,7 @@ public  abstract  class Agent implements Runnable, Serializable {
                     }
                 }
 
-                update(); // Agent's behavior
+                update();
                 Thread.sleep(20); // Smooth pacing
             }
         } catch (InterruptedException e) {
