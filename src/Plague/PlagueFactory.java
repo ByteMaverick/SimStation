@@ -8,7 +8,7 @@ import mvc.Command;
 import mvc.Model;
 import mvc.View;
 
-public class PlagueFactory extends WorldFactory {
+class PlagueFactory extends WorldFactory {
     @Override
     public Model makeModel() {
         return new PlagueStation();
@@ -30,6 +30,28 @@ public class PlagueFactory extends WorldFactory {
     }
 
 
+    @Override
+    public Command makeEditCommand(Model model, String type, Object source) {
+        if(type.equalsIgnoreCase("Not Fatal")){return  new notFatal(model);}
+
+        // Fall back SimStation makeEditCommand()
+        return super.makeEditCommand(model, type, source);
+    }
+
+
+}
+
+
+class notFatal extends  Command{
+
+    public notFatal(Model model){
+        super(model);
+    }
+    @Override
+    public void execute() throws Exception {
+        ((PlagueStation)model).setFatal(false);
+        System.out.println("Test");
+    }
 }
 
 

@@ -22,6 +22,7 @@ public class PlaguePanel extends WorldPanel  implements ChangeListener {
     private static JSlider infectionProbabiltySlider;
     private static JSlider InitialPopulationSlider;
     private static JSlider fatalitySlider;
+    private  static JButton fatal;
 
     public PlaguePanel(WorldFactory factory) {
         super(factory);
@@ -46,6 +47,8 @@ public class PlaguePanel extends WorldPanel  implements ChangeListener {
 
 
         // Fatal Button
+        fatal = new JButton("Not Fatal");
+        fatal.addActionListener(this);
 
 
 
@@ -56,10 +59,13 @@ public class PlaguePanel extends WorldPanel  implements ChangeListener {
         sliderPanel.add(makeLabeledSlider("Infection Probability", infectionProbabiltySlider));
         sliderPanel.add(makeLabeledSlider("Initial Population Size", InitialPopulationSlider));
         sliderPanel.add(makeLabeledSlider("Fatality/Recovery Time", fatalitySlider));
+        sliderPanel.add(fatal);
+
 
 
         // Add the whole slider panel to control panel
         controlPanel.add(sliderPanel, BorderLayout.CENTER);
+
 
     }
 
