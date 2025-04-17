@@ -4,7 +4,6 @@ import SimStation.WorldFactory;
 import SimStation.WorldPanel;
 import mvc.AppPanel;
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class GreedPanel extends WorldPanel {

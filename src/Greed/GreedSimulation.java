@@ -12,14 +12,12 @@ public class GreedSimulation extends GreedWorld {
 
     @Override
     public void populate() {
-        // Create grass patches
         for (int i = 0; i < NUM_PATCHES; i++) {
             int x = Utilities.rng.nextInt(SIZE);
             int y = Utilities.rng.nextInt(SIZE);
             addPatch(new Patch(x, y));
         }
 
-        // Create cows
         for (int i = 0; i < NUM_COWS; i++) {
             Cow c = new Cow("Cow-" + i, COW_GREEDINESS, COW_MOVE_ENERGY);
             c.setXc(Utilities.rng.nextInt(SIZE));
