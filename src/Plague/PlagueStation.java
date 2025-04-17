@@ -58,6 +58,7 @@ public class PlagueStation extends World {
 
     @Override
     public String getStatus() {
+        // Counting how many agents and active and infected.
         long infectedCount = agents.stream().filter(a -> a instanceof Host && ((Host) a).isInfected()).count();
 
         double infectedPercent = ((double) infectedCount / population_Size) * 100.0;

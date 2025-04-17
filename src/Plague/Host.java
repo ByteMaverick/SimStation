@@ -50,7 +50,10 @@ public class Host extends MobileAgent {
             int duration = world.getClock() - timeInfected;
             if (duration >= PlagueStation.INFECTION_LENGTH) {
                 if (PlagueStation.fatal) {
-                    stop(); // Host dies
+                    stop();
+                    
+
+                    // Host dies
                     return;
                 } else {
                     infected = false;

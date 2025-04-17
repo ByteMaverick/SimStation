@@ -36,7 +36,7 @@ class PlagueFactory extends WorldFactory {
     public Command makeEditCommand(Model model, String type, Object source) {
         if(type.equalsIgnoreCase("Not Fatal")){return  new notFatalCommand(model);}
 
-        // Fall back SimStation makeEditCommand()
+        // Fall back to SimStation makeEditCommand()
         return super.makeEditCommand(model, type, source);
     }
 
