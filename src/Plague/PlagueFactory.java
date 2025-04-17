@@ -34,7 +34,7 @@ class PlagueFactory extends WorldFactory {
 
     @Override
     public Command makeEditCommand(Model model, String type, Object source) {
-        if(type.equalsIgnoreCase("Not Fatal")){return  new notFatal(model);}
+        if(type.equalsIgnoreCase("Not Fatal")){return  new notFatalCommand(model);}
 
         // Fall back SimStation makeEditCommand()
         return super.makeEditCommand(model, type, source);
@@ -42,10 +42,9 @@ class PlagueFactory extends WorldFactory {
 
 }
 
+class notFatalCommand extends  Command{
 
-class notFatal extends  Command{
-
-    public notFatal(Model model){
+    public notFatalCommand(Model model){
         super(model);
     }
     @Override

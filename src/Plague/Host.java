@@ -2,7 +2,6 @@ package Plague;
 /*
 Edits:
 Mohammed Ansari: 4/11 created file
-Updated: 4/16 - added infection spread, movement, and fatality/recovery logic
 */
 import SimStation.*;
 import mvc.Utilities;

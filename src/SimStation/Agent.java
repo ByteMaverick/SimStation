@@ -95,7 +95,7 @@ public  abstract  class Agent implements Runnable, Serializable {
     protected void onInterrupted() {}
     protected void onExit() {}
 
-    public abstract void update(); // Must be implemented by subclasses
+    public abstract void update(); //  implemented by subclasses
 
 
 

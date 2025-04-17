@@ -58,12 +58,10 @@ public class PlagueStation extends World {
 
     @Override
     public String getStatus() {
-        long infectedCount = agents.stream()
-                .filter(a -> a instanceof Host && ((Host) a).isInfected())
-                .count();
+        long infectedCount = agents.stream().filter(a -> a instanceof Host && ((Host) a).isInfected()).count();
 
         double infectedPercent = ((double) infectedCount / population_Size) * 100.0;
-        long roundedPercent = Math.round(infectedPercent);
+        double roundedPercent = Math.round(infectedPercent);
 
         String status = "Clock: " + clock +
                 "\nAgents: " + agents.size() +
