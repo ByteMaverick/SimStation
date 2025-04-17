@@ -21,12 +21,14 @@ class PlagueFactory extends WorldFactory {
 
     @Override
     public String getTitle() {
-        return "PlagueStation";
+        return "Plague Simulation";
     }
+
+
 
     @Override
     public String about() {
-        return "";
+        return "SimStation, created by team 6: Mohammed Ansari, Mallika Natarajan, Gonul Koker";
     }
 
 
@@ -37,7 +39,6 @@ class PlagueFactory extends WorldFactory {
         // Fall back SimStation makeEditCommand()
         return super.makeEditCommand(model, type, source);
     }
-
 
 }
 
