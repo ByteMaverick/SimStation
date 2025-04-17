@@ -1,7 +1,7 @@
 package prisonersdilemma;
 /*
 Edits:
-Eda Koker: 4/15 created file
+Gonul Koker: 4/15 created file
  */
 public class TitForTat implements Strategy {
     @Override
